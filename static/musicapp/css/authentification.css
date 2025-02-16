@@ -1,0 +1,112 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #a1bcdb, #b4ece4); /* Светло-зелёный градиент */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Контейнер формы */
+.container {
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Заголовок */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Поля ввода */
+input {
+    width: calc(100% - 24px); /* Сделано одинаковым с учетом padding */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    display: block;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border-color: #56ab2f;
+    outline: none;
+    box-shadow: 0 0 5px rgba(86, 171, 47, 0.5);
+}
+
+/* Кнопки */
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-success {
+    background: #4c91af;
+    color: white;
+    border: none;
+}
+
+.btn-success:hover {
+    background: #396d83;
+}
+
+/* Разделитель */
+.or-seperator {
+    margin: 20px 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    position: relative;
+}
+
+.or-seperator i {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    padding: 0 10px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Ссылка на регистрацию / вход */
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+p a {
+    color: #4c91af;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}

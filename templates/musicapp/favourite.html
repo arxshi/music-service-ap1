@@ -1,0 +1,75 @@
+<!-- /musicapp/favorite.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Favourites</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/favourite.css">
+</head>
+<body>
+
+<br>
+
+<ul class="messages" style="width: 600px; margin-left: 400px; display: none;" id="messages">
+    <div class="alert alert-success">
+        <strong>Success!</strong> <span id="messageText"></span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+</ul>
+
+<br><br>
+
+<center>
+    <h3>Favourites</h3>
+</center>
+
+<table class="table table-hover table-primary">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Song Name</th>
+        <th scope="col">Album</th>
+        <th scope="col">Singer</th>
+        <th scope="col">Song</th>
+        <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody id="songsTable">
+    <tr>
+        <th scope="row">1</th>
+        <td><a href="song_detail.html">Example Song</a></td>
+        <td>Example Album</td>
+        <td>Example Singer</td>
+        <td>
+            <audio controls>
+                <source src="example-song.mp3" type="audio/mpeg">
+            </audio>
+        </td>
+        <td>
+            <button class="btn btn-primary remove-btn">Remove</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".remove-btn").forEach(button => {
+            button.addEventListener("click", function () {
+                this.closest("tr").remove();
+                document.getElementById("messageText").textContent = "Song removed from favourites!";
+                document.getElementById("messages").style.display = "block";
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
